@@ -1,0 +1,35 @@
+:root {
+  --icon-16: 16px;
+  --icon-20: 20px;
+  --icon-24: 24px;
+  --icon-32: 32px;
+  --icon-40: 40px;
+  --icon-48: 48px;
+  --icon-60: 60px;
+}
+
+.icon {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: -0.125em;
+  color: currentColor;
+  font-size: var(--icon-size, var(--icon-24));
+}
+
+.icon-16 { --icon-size: var(--icon-16); }
+.icon-20 { --icon-size: var(--icon-20); }
+.icon-24 { --icon-size: var(--icon-24); }
+.icon-32 { --icon-size: var(--icon-32); }
+.icon-40 { --icon-size: var(--icon-40); }
+.icon-48 { --icon-size: var(--icon-48); }
+.icon-60 { --icon-size: var(--icon-60); }
+
+.icon-outline {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+}
+
+.icon-solid {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}

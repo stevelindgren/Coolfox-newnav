@@ -1,0 +1,744 @@
+<!-- NAVIGATION -->
+<nav class="navbar navbar-expand-xl site-nav">
+  <div class="container site-nav__container">
+    <a class="navbar-brand site-nav__brand" href="/">
+      <img
+        src="img/coolfox-logo-color.svg"
+        width="296"
+        height="48"
+        alt="Cool Fox Trucks logo"
+        class="site-nav__logo"
+      />
+    </a>
+
+    <div class="site-nav__desktop" id="primaryNav">
+      <ul class="navbar-nav site-nav__links mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about.html">About</a>
+        </li>
+        <li
+          class="nav-item site-nav__menu-item site-nav__menu-item--has-dropdown"
+          data-menu="vehicles"
+        >
+          <div class="site-nav__menu-control">
+            <a class="nav-link site-nav__parent-link" href="/gallery.html">Vehicles</a>
+            <button
+              class="site-nav__menu-trigger"
+              type="button"
+              id="nav-trigger-vehicles"
+              aria-expanded="false"
+              aria-controls="desktop-menu-vehicles"
+              aria-label="Toggle Vehicles menu"
+            >
+              <span class="site-nav__chevron-icon" aria-hidden="true">›</span>
+            </button>
+          </div>
+        </li>
+        <li
+          class="nav-item site-nav__menu-item site-nav__menu-item--has-dropdown"
+          data-menu="rentals"
+        >
+          <div class="site-nav__menu-control">
+            <a class="nav-link site-nav__parent-link" href="/rental.html">Rentals</a>
+            <button
+              class="site-nav__menu-trigger"
+              type="button"
+              id="nav-trigger-rentals"
+              aria-expanded="false"
+              aria-controls="desktop-menu-rentals"
+              aria-label="Toggle Rentals menu"
+            >
+              <span class="site-nav__chevron-icon" aria-hidden="true">›</span>
+            </button>
+          </div>
+        </li>
+        <li
+          class="nav-item site-nav__menu-item site-nav__menu-item--has-dropdown"
+          data-menu="specs"
+        >
+          <div class="site-nav__menu-control">
+            <a class="nav-link site-nav__parent-link" href="/specs.html">Specs</a>
+            <button
+              class="site-nav__menu-trigger"
+              type="button"
+              id="nav-trigger-specs"
+              aria-expanded="false"
+              aria-controls="desktop-menu-specs"
+              aria-label="Toggle Specs menu"
+            >
+              <span class="site-nav__chevron-icon" aria-hidden="true">›</span>
+            </button>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/services.html">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact.html">Contact</a>
+        </li>
+      </ul>
+
+      <div class="site-nav__actions">
+        <a
+          href="tel:6316082112"
+          class="site-nav__icon site-nav__icon--phone"
+          aria-label="Call Cool Fox Trucks"
+          onclick="gtag('event','conversion',{'send_to':'AW-941581171/CONVERSION_LABEL'});"
+        >
+          <i class="icon icon-16 icon-solid fa-phone"></i>
+          <span class="site-nav__phone-text">(631) 608-2112</span>
+        </a>
+        <a
+          href="mailto:sales@coolfoxtrucks.com?Subject=Website%20Inquiry"
+          class="site-nav__icon site-nav__icon--email"
+          aria-label="Email Cool Fox Trucks"
+        >
+          <i class="icon icon-16 icon-solid fa-envelope"></i>
+        </a>
+        <a
+          href="https://www.trucklendersusa.com/get-pre-approved"
+          class="btn site-nav__cta"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Get Financing</a
+        >
+      </div>
+    </div>
+
+    <div class="site-nav__mobile-actions">
+      <a
+        href="tel:6316082112"
+        class="site-nav__icon site-nav__mobile-icon site-nav__mobile-icon--phone"
+        aria-label="Call Cool Fox Trucks"
+        onclick="gtag('event','conversion',{'send_to':'AW-941581171/CONVERSION_LABEL'});"
+      >
+        <i class="icon icon-16 icon-solid fa-phone" aria-hidden="true"></i>
+      </a>
+      <a
+        href="mailto:sales@coolfoxtrucks.com?Subject=Website%20Inquiry"
+        class="site-nav__icon site-nav__mobile-icon site-nav__mobile-icon--email"
+        aria-label="Email Cool Fox Trucks"
+      >
+        <i class="icon icon-16 icon-solid fa-envelope" aria-hidden="true"></i>
+      </a>
+      <button
+        class="navbar-toggler site-nav__toggler"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobileNav"
+        aria-label="Open site navigation"
+      >
+        <span class="site-nav__toggler-box" aria-hidden="true">
+          <span class="site-nav__toggler-line"></span>
+          <span class="site-nav__toggler-line"></span>
+          <span class="site-nav__toggler-line"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="site-nav__dropdown-stage" aria-hidden="true">
+    <div class="container site-nav__dropdown-stage-inner">
+      <section
+        class="site-nav__dropdown-panel site-nav__dropdown-panel--wide"
+        id="desktop-menu-vehicles"
+        aria-labelledby="nav-trigger-vehicles"
+        hidden
+      >
+        <div class="site-nav__dropdown-grid site-nav__dropdown-grid--vehicles">
+          <div class="site-nav__dropdown-column">
+            <a
+              class="site-nav__menu-link site-nav__menu-link--mercedes"
+              href="/gallery-mb-sprinter.html"
+            >
+              <span class="site-nav__menu-icon-wrap site-nav__menu-icon-wrap--logo">
+                <span class="site-nav__menu-logo site-nav__menu-logo--mercedes" aria-hidden="true"></span>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">Mercedes Sprinter</span>
+                <span class="site-nav__menu-description"
+                  >Spacious configurations for dependable refrigerated delivery.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__menu-link site-nav__menu-link--ford"
+              href="/gallery-ford-transit.html"
+            >
+              <span class="site-nav__menu-icon-wrap site-nav__menu-icon-wrap--logo">
+                <span class="site-nav__menu-logo site-nav__menu-logo--ford" aria-hidden="true"></span>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">Ford Transit</span>
+                <span class="site-nav__menu-description"
+                  >A versatile platform for businesses and urban delivery routes.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__menu-link site-nav__menu-link--ram"
+              href="/gallery-ram-promaster.html"
+            >
+              <span class="site-nav__menu-icon-wrap site-nav__menu-icon-wrap--logo">
+                <span class="site-nav__menu-logo site-nav__menu-logo--ram" aria-hidden="true"></span>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">RAM ProMaster</span>
+                <span class="site-nav__menu-description"
+                  >Easy loading and efficient performance for city deliveries.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__menu-link site-nav__menu-link--chevrolet"
+              href="/gallery-chevy.html"
+            >
+              <span class="site-nav__menu-icon-wrap site-nav__menu-icon-wrap--logo">
+                <span class="site-nav__menu-logo site-nav__menu-logo--chevrolet" aria-hidden="true"></span>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">Chevrolet Express</span>
+                <span class="site-nav__menu-description"
+                  >A proven full-size platform with flexible upfitting options.</span
+                >
+              </span>
+            </a>
+          </div>
+
+          <div class="site-nav__dropdown-divider" aria-hidden="true"></div>
+
+          <div class="site-nav__dropdown-column">
+            <a
+              class="site-nav__menu-link site-nav__menu-link--gmc"
+              href="/gallery-gmc.html"
+            >
+              <span class="site-nav__menu-icon-wrap site-nav__menu-icon-wrap--logo">
+                <span class="site-nav__menu-logo site-nav__menu-logo--gmc" aria-hidden="true"></span>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">GMC Savana</span>
+                <span class="site-nav__menu-description"
+                  >Heavy-duty capability for demanding refrigerated routes.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__menu-link site-nav__menu-link--custom"
+              href="/gallery-custom.html"
+            >
+              <span class="site-nav__menu-icon-wrap">
+                <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">Custom Builds</span>
+                <span class="site-nav__menu-description"
+                  >Custom refrigerated vans, trucks, trailers, and specialty builds.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__menu-link site-nav__menu-link--all"
+              href="/gallery.html"
+            >
+              <span class="site-nav__menu-icon-wrap">
+                <i class="fa-solid fa-table-cells-large" aria-hidden="true"></i>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">All Vehicles</span>
+                <span class="site-nav__menu-description"
+                  >Explore every vehicle platform and refrigerated build option.</span
+                >
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="site-nav__dropdown-panel site-nav__dropdown-panel--compact"
+        id="desktop-menu-rentals"
+        aria-labelledby="nav-trigger-rentals"
+        hidden
+      >
+        <div class="site-nav__dropdown-grid site-nav__dropdown-grid--compact">
+          <div class="site-nav__dropdown-column">
+            <a
+              class="site-nav__menu-link site-nav__menu-link--rental-van"
+              href="/rental.html"
+            >
+              <span class="site-nav__menu-icon-wrap">
+                <i class="fa-solid fa-van-shuttle" aria-hidden="true"></i>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">Refrigerated Van Rentals</span>
+                <span class="site-nav__menu-description"
+                  >Flexible refrigerated vans for temporary and short-term needs.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__menu-link site-nav__menu-link--rental-trailer"
+              href="/rental.html#trailers"
+            >
+              <span class="site-nav__menu-icon-wrap">
+                <i class="fa-solid fa-trailer" aria-hidden="true"></i>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">Refrigerated Trailer Rentals</span>
+                <span class="site-nav__menu-description"
+                  >Cold-storage trailer solutions for events and business operations.</span
+                >
+              </span>
+            </a>
+          </div>
+
+          <div class="site-nav__dropdown-divider" aria-hidden="true"></div>
+
+          <div class="site-nav__dropdown-column">
+            <a
+              class="site-nav__menu-link site-nav__menu-link--rental-docs"
+              href="/rental.html#docs"
+            >
+              <span class="site-nav__menu-icon-wrap">
+                <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title"
+                  >Insurance Requirements &amp; Credit Forms</span
+                >
+                <span class="site-nav__menu-description"
+                  >Review rental requirements and complete the necessary forms.</span
+                >
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="site-nav__dropdown-panel site-nav__dropdown-panel--compact"
+        id="desktop-menu-specs"
+        aria-labelledby="nav-trigger-specs"
+        hidden
+      >
+        <div class="site-nav__dropdown-grid site-nav__dropdown-grid--compact">
+          <div class="site-nav__dropdown-column">
+            <a
+              class="site-nav__menu-link site-nav__menu-link--mercedes"
+              href="/specs-mercedes.html"
+            >
+              <span class="site-nav__menu-icon-wrap site-nav__menu-icon-wrap--logo">
+                <span class="site-nav__menu-logo site-nav__menu-logo--mercedes" aria-hidden="true"></span>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">Mercedes Specs</span>
+                <span class="site-nav__menu-description"
+                  >Cargo dimensions for insulated Mercedes-Benz Sprinter refrigerated vans.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__menu-link site-nav__menu-link--ford"
+              href="/specs-ford.html"
+            >
+              <span class="site-nav__menu-icon-wrap site-nav__menu-icon-wrap--logo">
+                <span class="site-nav__menu-logo site-nav__menu-logo--ford" aria-hidden="true"></span>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">Ford Specs</span>
+                <span class="site-nav__menu-description"
+                  >Transit cargo dimensions for efficient temperature-controlled delivery routes.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__menu-link site-nav__menu-link--gm-specs"
+              href="/specs-gm.html"
+            >
+              <span class="site-nav__menu-icon-wrap site-nav__menu-icon-wrap--logo">
+                <span class="site-nav__menu-logo site-nav__menu-logo--gmc" aria-hidden="true"></span>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">GM Specs</span>
+                <span class="site-nav__menu-description"
+                  >Chevrolet Express and GMC Savana cargo dimensions based on Cool Fox builds.</span
+                >
+              </span>
+            </a>
+          </div>
+
+          <div class="site-nav__dropdown-divider" aria-hidden="true"></div>
+
+          <div class="site-nav__dropdown-column">
+            <a
+              class="site-nav__menu-link site-nav__menu-link--ram"
+              href="/specs-ram.html"
+            >
+              <span class="site-nav__menu-icon-wrap site-nav__menu-icon-wrap--logo">
+                <span class="site-nav__menu-logo site-nav__menu-logo--ram" aria-hidden="true"></span>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">RAM Specs</span>
+                <span class="site-nav__menu-description"
+                  >ProMaster cargo dimensions for refrigerated delivery and commercial use.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__menu-link site-nav__menu-link--all"
+              href="/specs.html"
+            >
+              <span class="site-nav__menu-icon-wrap">
+                <i class="fa-solid fa-ruler-combined" aria-hidden="true"></i>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">All Specs</span>
+                <span class="site-nav__menu-description"
+                  >Compare cargo area measurements across every refrigerated platform.</span
+                >
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</nav>
+
+<div class="site-nav__mobile-panel" id="mobileNav" hidden>
+  <div class="container site-nav__mobile-panel-inner">
+    <div class="site-nav__mobile-header">
+      <div class="site-nav__mobile-title site-nav__brand site-nav__mobile-brand">
+        <img
+          src="img/coolfox-logo-color.svg"
+          width="296"
+          height="48"
+          alt="Cool Fox Trucks logo"
+          class="site-nav__logo site-nav__mobile-title-logo"
+        />
+      </div>
+      <button
+        class="site-nav__mobile-close"
+        type="button"
+        aria-label="Close site navigation"
+      ></button>
+    </div>
+    <div class="site-nav__mobile-scroll">
+      <ul class="list-unstyled site-nav__mobile-list">
+        <li>
+          <a class="site-nav__mobile-link site-nav__mobile-link--top" href="/about.html">
+            <span>About</span>
+          </a>
+        </li>
+        <li class="site-nav__mobile-group" data-menu="vehicles">
+          <button
+            class="site-nav__mobile-trigger"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-menu-vehicles"
+          >
+            <span>Vehicles</span>
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+          <div class="site-nav__mobile-submenu" id="mobile-menu-vehicles" hidden>
+            <a
+              class="site-nav__mobile-card site-nav__mobile-card--mercedes"
+              href="/gallery-mb-sprinter.html"
+            >
+              <span class="site-nav__menu-icon-wrap site-nav__menu-icon-wrap--logo">
+                <span class="site-nav__menu-logo site-nav__menu-logo--mercedes" aria-hidden="true"></span>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">Mercedes Sprinter</span>
+                <span class="site-nav__menu-description"
+                  >Spacious configurations for dependable refrigerated delivery.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__mobile-card site-nav__mobile-card--ford"
+              href="/gallery-ford-transit.html"
+            >
+              <span class="site-nav__menu-icon-wrap site-nav__menu-icon-wrap--logo">
+                <span class="site-nav__menu-logo site-nav__menu-logo--ford" aria-hidden="true"></span>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">Ford Transit</span>
+                <span class="site-nav__menu-description"
+                  >A versatile platform for businesses and urban delivery routes.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__mobile-card site-nav__mobile-card--ram"
+              href="/gallery-ram-promaster.html"
+            >
+              <span class="site-nav__menu-icon-wrap site-nav__menu-icon-wrap--logo">
+                <span class="site-nav__menu-logo site-nav__menu-logo--ram" aria-hidden="true"></span>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">RAM ProMaster</span>
+                <span class="site-nav__menu-description"
+                  >Easy loading and efficient performance for city deliveries.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__mobile-card site-nav__mobile-card--custom site-nav__mobile-card--group-end"
+              href="/gallery-custom.html"
+            >
+              <span class="site-nav__menu-icon-wrap">
+                <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">Custom Builds</span>
+                <span class="site-nav__menu-description"
+                  >Custom refrigerated vans, trucks, trailers, and specialty builds.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__mobile-card site-nav__mobile-card--chevrolet"
+              href="/gallery-chevy.html"
+            >
+              <span class="site-nav__menu-icon-wrap site-nav__menu-icon-wrap--logo">
+                <span class="site-nav__menu-logo site-nav__menu-logo--chevrolet" aria-hidden="true"></span>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">Chevrolet Express</span>
+                <span class="site-nav__menu-description"
+                  >A proven full-size platform with flexible upfitting options.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__mobile-card site-nav__mobile-card--gmc"
+              href="/gallery-gmc.html"
+            >
+              <span class="site-nav__menu-icon-wrap site-nav__menu-icon-wrap--logo">
+                <span class="site-nav__menu-logo site-nav__menu-logo--gmc" aria-hidden="true"></span>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">GMC Savana</span>
+                <span class="site-nav__menu-description"
+                  >Heavy-duty capability for demanding refrigerated routes.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__mobile-card site-nav__mobile-card--all"
+              href="/gallery.html"
+            >
+              <span class="site-nav__menu-icon-wrap">
+                <i class="fa-solid fa-table-cells-large" aria-hidden="true"></i>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">All Vehicles</span>
+                <span class="site-nav__menu-description"
+                  >Explore every vehicle platform and refrigerated build option.</span
+                >
+              </span>
+            </a>
+          </div>
+        </li>
+        <li class="site-nav__mobile-group" data-menu="rentals">
+          <button
+            class="site-nav__mobile-trigger"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-menu-rentals"
+          >
+            <span>Rentals</span>
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+          <div class="site-nav__mobile-submenu" id="mobile-menu-rentals" hidden>
+            <a
+              class="site-nav__mobile-card site-nav__mobile-card--rental-van"
+              href="/rental.html"
+            >
+              <span class="site-nav__menu-icon-wrap">
+                <i class="fa-solid fa-van-shuttle" aria-hidden="true"></i>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">Refrigerated Van Rentals</span>
+                <span class="site-nav__menu-description"
+                  >Flexible refrigerated vans for temporary and short-term needs.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__mobile-card site-nav__mobile-card--rental-trailer"
+              href="/rental.html#trailers"
+            >
+              <span class="site-nav__menu-icon-wrap">
+                <i class="fa-solid fa-trailer" aria-hidden="true"></i>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">Refrigerated Trailer Rentals</span>
+                <span class="site-nav__menu-description"
+                  >Cold-storage trailer solutions for events and business operations.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__mobile-card site-nav__mobile-card--rental-docs"
+              href="/rental.html#docs"
+            >
+              <span class="site-nav__menu-icon-wrap">
+                <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title"
+                  >Insurance Requirements &amp; Credit Forms</span
+                >
+                <span class="site-nav__menu-description"
+                  >Review rental requirements and complete the necessary forms.</span
+                >
+              </span>
+            </a>
+          </div>
+        </li>
+        <li class="site-nav__mobile-group" data-menu="specs">
+          <button
+            class="site-nav__mobile-trigger"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-menu-specs"
+          >
+            <span>Specs</span>
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+          <div class="site-nav__mobile-submenu" id="mobile-menu-specs" hidden>
+            <a
+              class="site-nav__mobile-card site-nav__mobile-card--mercedes"
+              href="/specs-mercedes.html"
+            >
+              <span class="site-nav__menu-icon-wrap site-nav__menu-icon-wrap--logo">
+                <span class="site-nav__menu-logo site-nav__menu-logo--mercedes" aria-hidden="true"></span>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">Mercedes Specs</span>
+                <span class="site-nav__menu-description"
+                  >Cargo dimensions for insulated Mercedes-Benz Sprinter refrigerated vans.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__mobile-card site-nav__mobile-card--ford"
+              href="/specs-ford.html"
+            >
+              <span class="site-nav__menu-icon-wrap site-nav__menu-icon-wrap--logo">
+                <span class="site-nav__menu-logo site-nav__menu-logo--ford" aria-hidden="true"></span>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">Ford Specs</span>
+                <span class="site-nav__menu-description"
+                  >Transit cargo dimensions for efficient temperature-controlled delivery routes.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__mobile-card site-nav__mobile-card--gm-specs"
+              href="/specs-gm.html"
+            >
+              <span class="site-nav__menu-icon-wrap site-nav__menu-icon-wrap--logo">
+                <span class="site-nav__menu-logo site-nav__menu-logo--gmc" aria-hidden="true"></span>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">GM Specs</span>
+                <span class="site-nav__menu-description"
+                  >Chevrolet Express and GMC Savana cargo dimensions based on Cool Fox builds.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__mobile-card site-nav__mobile-card--ram"
+              href="/specs-ram.html"
+            >
+              <span class="site-nav__menu-icon-wrap site-nav__menu-icon-wrap--logo">
+                <span class="site-nav__menu-logo site-nav__menu-logo--ram" aria-hidden="true"></span>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">RAM Specs</span>
+                <span class="site-nav__menu-description"
+                  >ProMaster cargo dimensions for refrigerated delivery and commercial use.</span
+                >
+              </span>
+            </a>
+
+            <a
+              class="site-nav__mobile-card site-nav__mobile-card--all"
+              href="/specs.html"
+            >
+              <span class="site-nav__menu-icon-wrap">
+                <i class="fa-solid fa-ruler-combined" aria-hidden="true"></i>
+              </span>
+              <span class="site-nav__menu-copy">
+                <span class="site-nav__menu-title">All Specs</span>
+                <span class="site-nav__menu-description"
+                  >Compare cargo area measurements across every refrigerated platform.</span
+                >
+              </span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <a class="site-nav__mobile-link site-nav__mobile-link--top" href="/services.html">
+            <span>Services</span>
+          </a>
+        </li>
+        <li>
+          <a class="site-nav__mobile-link site-nav__mobile-link--top" href="/contact.html">
+            <span>Contact</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="site-nav__mobile-footer">
+        <a
+          href="tel:6316082112"
+          class="site-nav__mobile-contact"
+          onclick="gtag('event','conversion',{'send_to':'AW-941581171/CONVERSION_LABEL'});"
+        >
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          <span>(631) 608-2112</span>
+        </a>
+        <a
+          href="mailto:sales@coolfoxtrucks.com?Subject=Website%20Inquiry"
+          class="site-nav__mobile-contact"
+        >
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          <span>sales@coolfoxtrucks.com</span>
+        </a>
+        <a
+          href="https://www.trucklendersusa.com/get-pre-approved"
+          class="btn site-nav__cta site-nav__cta--mobile-panel"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Get Financing</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<!--End Navigation -->

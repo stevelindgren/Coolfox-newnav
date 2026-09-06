@@ -1,0 +1,216 @@
+:root {
+  /* Color palette */
+  --blue-50: #d6e9ff;
+  --blue-100: #add2ff;
+  --blue-200: #5ca5ff;
+  --blue-300: #0a78ff;
+  --blue-400: #0053b8;
+  --blue-500: #002d64;
+  --blue-600: #002552;
+  --blue-700: #001c3d;
+  --blue-800: #001229;
+  --blue-900: #000914;
+  --blue-950: #00050a;
+
+  --color-primary: var(--blue-400);
+  --color-primary-strong: #034da8;
+  --color-secondary: var(--blue-400);
+  --color-accent: #f4b400;
+  --color-success: #2ca85f;
+  --color-warning: #f4a100;
+  --color-danger: #d9534f;
+  --color-neutral-900: #1d2326;
+  --color-neutral-700: #3a454a;
+  --color-neutral-600: #55636b;
+  --color-neutral-500: #6e7c84;
+  --color-neutral-300: #c2c9cd;
+  --color-neutral-100: #f5f7f8;
+
+  /* Desktop defaults (>=1200px) */
+  --h1-size: clamp(2rem, 1.5vw + 1.5rem, 3.125rem);
+  /* ~32–50px */
+  --h1-line: 60px;
+  --h2-size: clamp(1.85rem, 0.9vw + 1.35rem, 2.25rem);
+  /* ~30–36px */
+  --h2-line: 44px;
+  --h3-size: clamp(1.5rem, 0.8vw + 1.05rem, 1.9rem);
+  /* ~24–30px */
+  --h3-line: 36px;
+  --h4-size: clamp(1.25rem, 0.4vw + 1rem, 1.5rem);
+  /* ~20–24px */
+  --h4-line: 32px;
+  --h5-size: clamp(1.05rem, 0.35vw + 0.88rem, 1.2rem);
+  /* ~16.8–19px */
+  --h5-line: 28px;
+  --h6-size: clamp(0.95rem, 0.3vw + 0.78rem, 1.05rem);
+  /* ~15.2–16.8px */
+  --h6-line: 24px;
+
+  --body-size: 1rem;
+  /* 16px */
+  --body-line: 22px;
+  --body-lg-size: 1.125rem;
+  /* 18px */
+  --body-lg-line: 28px;
+  --body-sm-size: 0.875rem;
+  /* 14px */
+  --body-sm-line: 20px;
+  --btn-size: 0.875rem;
+  /* 14px */
+  --btn-line: 20px;
+  --meta-size: 0.75rem;
+  /* 12px */
+  --meta-line: 16px;
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+
+  /* Tablet */
+  :root {
+    --h1-size: clamp(2rem, 1.5vw + 1.5rem, 3.125rem);
+    --h1-line: 48px;
+    --h2-size: clamp(1.7rem, 0.8vw + 1.2rem, 2.05rem);
+    --h2-line: 40px;
+    --h3-size: clamp(1.35rem, 0.7vw + 1rem, 1.8rem);
+    --h3-line: 36px;
+    --h4-size: clamp(1.2rem, 0.35vw + 0.98rem, 1.4rem);
+    --h4-line: 28px;
+    --h5-size: clamp(1rem, 0.3vw + 0.85rem, 1.15rem);
+    --h5-line: 28px;
+    --h6-size: clamp(0.94rem, 0.28vw + 0.78rem, 1.02rem);
+    --h6-line: 24px;
+  }
+}
+
+@media (max-width: 767.98px) {
+
+  /* Mobile */
+  :root {
+    --h1-size: clamp(2rem, 1.5vw + 1.5rem, 3.125rem);
+    --h1-line: 40px;
+    --h2-size: clamp(1.6rem, 1.2vw + 1.05rem, 1.95rem);
+    --h2-line: 36px;
+    --h3-size: clamp(1.35rem, 1vw + 0.95rem, 1.75rem);
+    --h3-line: 32px;
+    --h4-size: clamp(1.18rem, 0.8vw + 0.9rem, 1.35rem);
+    --h4-line: 28px;
+    --h5-size: clamp(1rem, 0.6vw + 0.85rem, 1.1rem);
+    --h5-line: 28px;
+    --h6-size: clamp(0.94rem, 0.5vw + 0.78rem, 1rem);
+    --h6-line: 24px;
+  }
+}
+
+h1,
+.h1 {
+  font-size: var(--h1-size);
+  line-height: var(--h1-line);
+}
+
+h2,
+.h2 {
+  font-size: var(--h2-size);
+  line-height: var(--h2-line);
+}
+
+h3,
+.h3 {
+  font-size: var(--h3-size);
+  line-height: var(--h3-line);
+}
+
+h4,
+.h4 {
+  font-size: var(--h4-size);
+  line-height: var(--h4-line);
+}
+
+h5,
+.h5 {
+  font-size: var(--h5-size);
+  line-height: var(--h5-line);
+}
+
+h6,
+.h6 {
+  font-size: var(--h6-size);
+  line-height: var(--h6-line);
+}
+
+body {
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+}
+
+.lead {
+  font-size: var(--body-lg-size);
+  line-height: var(--body-lg-line);
+}
+
+small,
+.small {
+  font-size: var(--body-sm-size);
+  line-height: var(--body-sm-line);
+}
+
+.btn {
+  font-size: var(--btn-size);
+  line-height: var(--btn-line);
+}
+
+nav a,
+.navbar-nav .nav-link {
+  font-size: var(--btn-size);
+  line-height: var(--btn-line);
+}
+
+.text-muted,
+.meta {
+  font-size: var(--meta-size);
+  line-height: var(--meta-line);
+}
+
+/* Color utility helpers */
+.text-primary-brand {
+  color: var(--color-primary) !important;
+}
+
+.text-secondary-brand {
+  color: var(--color-secondary) !important;
+}
+
+.text-accent {
+  color: var(--color-accent) !important;
+}
+
+.text-neutral-900 {
+  color: var(--color-neutral-900) !important;
+}
+
+.text-neutral-700 {
+  color: var(--color-neutral-700) !important;
+}
+
+.text-neutral-500 {
+  color: var(--color-neutral-500) !important;
+}
+
+.bg-primary-brand {
+  background-color: var(--color-primary) !important;
+}
+
+.bg-secondary-brand {
+  background-color: var(--color-secondary) !important;
+}
+
+.bg-neutral-100 {
+  background-color: var(--color-neutral-100) !important;
+}
+
+.border-primary-brand {
+  border-color: var(--color-primary) !important;
+}
+
+.border-neutral-300 {
+  border-color: var(--color-neutral-300) !important;
+}

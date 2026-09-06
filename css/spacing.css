@@ -1,0 +1,57 @@
+:root {
+  /* 4pt spacing scale */
+  --space-0: 0;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-32: 32px;
+  --space-36: 36px;
+  --space-40: 40px;
+  --space-44: 44px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-72: 72px;
+  --space-80: 80px;
+  --space-88: 88px;
+  --space-96: 96px;
+  --space-104: 104px;
+  --space-112: 112px;
+  --space-120: 120px;
+  --space-128: 128px;
+  --space-144: 144px;
+  --space-160: 160px;
+
+  /* Semantic spacing tokens */
+  --space-section-y: clamp(var(--space-48), calc(5vw + var(--space-32)), var(--space-96));
+  --space-section-y-tight: clamp(
+    var(--space-32),
+    calc(3.5vw + var(--space-16)),
+    var(--space-64)
+  );
+  --space-section-y-loose: clamp(var(--space-64), calc(7vw + var(--space-40)), var(--space-128));
+
+  /* Back-compat aliases (existing usage in style.css) */
+  --section-py: var(--space-section-y);
+  --section-py-tight: var(--space-section-y-tight);
+  --section-py-loose: var(--space-section-y-loose);
+}
+
+.section {
+  padding-top: var(--section-py);
+  padding-bottom: var(--section-py);
+}
+
+.section-tight {
+  padding-top: var(--section-py-tight);
+  padding-bottom: var(--section-py-tight);
+}
+
+.section-loose {
+  padding-top: var(--section-py-loose);
+  padding-bottom: var(--section-py-loose);
+}
