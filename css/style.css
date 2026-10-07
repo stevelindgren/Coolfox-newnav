@@ -1723,6 +1723,14 @@ button:focus,
   --hero-overlay-tail-end: clamp(560px, 70vh, 700px);
 }
 
+/* Phones show the whole hero photo at screen width, so a 1200px-wide version
+   is enough there: same picture, fewer bytes. Larger screens keep the full file. */
+@media (max-width: 600px) {
+  .hero {
+    background-image: url("../img/hero-bg-1200.webp");
+  }
+}
+
 .hero::before {
   content: "";
   position: absolute;
