@@ -1933,11 +1933,16 @@ button:focus,
   border-color: var(--color-primary);
 }
 
+/* Hover: no fill change, just a slightly darker border than the static blue. */
 .hero__btn--ghost:hover,
 .hero__btn--ghost:focus {
-  background: #e8f1ff;
   color: var(--blue-500);
-  border-color: var(--blue-500);
+  border-color: #004494;
+}
+
+.hero__btn--ghost:focus-visible {
+  outline: 2px solid var(--blue-300);
+  outline-offset: 2px;
 }
 
 .hero__btn--ghost:active {
@@ -2284,7 +2289,8 @@ button:focus,
 }
 
 @media (min-width: 1024px) and (max-width: 1279.98px) {
-  .navbar .container {
+  .navbar .container,
+  .site-nav__mobile-header.container {
     max-width: 1200px;
   }
 
@@ -3520,19 +3526,25 @@ button:focus-visible {
 }
 
 
+/* Content is visible by default; it is only hidden for the scroll fade once
+   the inline head script has confirmed JavaScript is running. */
 .fade-in-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.fade-in-on-scroll.is-visible {
+.js-fade-ready .fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.js-fade-ready .fade-in-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .fade-in-on-scroll {
+  .fade-in-on-scroll,
+  .js-fade-ready .fade-in-on-scroll {
     opacity: 1;
     transform: none;
     transition: none;
@@ -6023,257 +6035,6 @@ button:focus-visible {
   opacity: 1;
 }
 
-.ford-gallery-carousel {
-  position: relative;
-  overflow: hidden;
-  background: #f8fafc;
-}
-
-.ford-gallery-carousel__container {
-  width: 100%;
-  max-width: none;
-  padding-inline: clamp(16px, 4vw, 56px);
-}
-
-.ford-gallery-carousel__stage {
-  position: relative;
-  width: 100%;
-}
-
-.ford-gallery-carousel__viewport {
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  touch-action: pan-y;
-  user-select: none;
-  cursor: grab;
-}
-
-.ford-gallery-carousel__viewport.is-dragging {
-  cursor: grabbing;
-}
-
-.ford-gallery-carousel__track {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: clamp(16px, 2vw, 28px);
-  width: max-content;
-  will-change: transform;
-}
-
-.ford-gallery-carousel__slide {
-  position: relative;
-  flex: 0 0 auto;
-  width: min(52vw, 860px);
-  height: auto;
-  border: 0;
-  padding: 0;
-  border-radius: var(--radius-surface-media);
-  overflow: hidden;
-  clip-path: inset(0 round var(--radius-surface-media));
-  background: transparent;
-  transform-origin: center center;
-  transition:
-    transform 0.68s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.5s ease;
-  will-change: transform, opacity;
-  isolation: isolate;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  cursor: pointer;
-}
-
-.ford-gallery-carousel__slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: inherit;
-  clip-path: inset(0 round inherit);
-}
-
-.ford-gallery-carousel__nav {
-  all: unset;
-  box-sizing: border-box;
-  position: absolute;
-  top: 50%;
-  z-index: 220;
-  margin: 0;
-  padding: 0;
-  font: inherit;
-  line-height: 1;
-  appearance: none;
-  -webkit-appearance: none;
-  -webkit-tap-highlight-color: transparent;
-  width: clamp(48px, 4vw, 68px);
-  height: clamp(48px, 4vw, 68px);
-  min-width: clamp(48px, 4vw, 68px);
-  max-width: clamp(48px, 4vw, 68px);
-  min-height: clamp(48px, 4vw, 68px);
-  max-height: clamp(48px, 4vw, 68px);
-  border: 1px solid rgba(13, 36, 60, 0.12);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.84);
-  color: var(--blue-400);
-  box-shadow: none;
-  outline: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(-50%);
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease,
-    opacity 0.2s ease;
-  pointer-events: auto;
-  cursor: pointer;
-}
-
-.ford-gallery-carousel__nav:hover,
-.ford-gallery-carousel__nav:focus {
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.96);
-  border-color: rgba(13, 36, 60, 0.22);
-  color: var(--blue-400);
-  box-shadow: none;
-  outline: none;
-}
-
-.ford-gallery-carousel__nav:focus-visible {
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.96);
-  border-color: rgba(13, 36, 60, 0.22);
-  color: var(--blue-400);
-  box-shadow: none;
-  outline: 2px solid rgba(13, 83, 184, 0.28);
-  outline-offset: 3px;
-}
-
-.ford-gallery-carousel__nav:active {
-  transform: translateY(-50%) scale(0.96);
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(13, 36, 60, 0.18);
-  color: var(--blue-400);
-  box-shadow: none;
-  outline: none;
-  opacity: 0.94;
-}
-
-.ford-gallery-carousel__nav--prev {
-  left: calc(50% - min(26vw, 430px) - clamp(48px, 4vw, 68px) - 16px);
-}
-
-.ford-gallery-carousel__nav--next {
-  right: calc(50% - min(26vw, 430px) - clamp(48px, 4vw, 68px) - 16px);
-}
-
-.ford-gallery-carousel__nav-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1em;
-  height: 1em;
-  font-size: 20px;
-  line-height: 1;
-  text-align: center;
-  transform: translate3d(0, 0, 0);
-}
-
-@media (max-width: 991.98px) {
-  .ford-gallery-carousel__slide {
-    width: min(62vw, 640px);
-    border-radius: var(--radius-surface-media);
-  }
-
-  .ford-gallery-carousel__nav--prev {
-    left: calc(50% - min(31vw, 320px) - clamp(48px, 4vw, 68px) - 16px);
-  }
-
-  .ford-gallery-carousel__nav--next {
-    right: calc(50% - min(31vw, 320px) - clamp(48px, 4vw, 68px) - 16px);
-  }
-}
-
-@media (max-width: 575.98px) {
-  .ford-gallery-carousel__container {
-    padding-inline: 12px;
-  }
-
-  .ford-gallery-carousel__track {
-    gap: 14px;
-  }
-
-  .ford-gallery-carousel__slide {
-    width: min(80vw, 352px);
-    border-radius: var(--radius-surface-media);
-  }
-
-  .ford-gallery-carousel__nav {
-    top: 50%;
-    bottom: auto;
-    transform: translateY(-50%);
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
-    max-width: 38px;
-    min-height: 38px;
-    max-height: 38px;
-    aspect-ratio: 1 / 1;
-  }
-
-  .ford-gallery-carousel__nav-icon {
-    font-size: 16px;
-  }
-
-  .ford-gallery-carousel__nav:hover,
-  .ford-gallery-carousel__nav:focus {
-    background: rgba(255, 255, 255, 0.96);
-    border-color: rgba(13, 36, 60, 0.22);
-    color: var(--blue-400);
-    transform: translateY(-50%);
-    box-shadow: none;
-    outline: none;
-  }
-
-  .ford-gallery-carousel__nav:focus-visible {
-    background: rgba(255, 255, 255, 0.96);
-    border-color: rgba(13, 36, 60, 0.22);
-    color: var(--blue-400);
-    transform: translateY(-50%);
-    box-shadow: none;
-    outline: 2px solid rgba(13, 83, 184, 0.28);
-    outline-offset: 3px;
-  }
-
-  .ford-gallery-carousel__nav:active {
-    background: rgba(255, 255, 255, 0.9);
-    border-color: rgba(13, 36, 60, 0.18);
-    color: var(--blue-400);
-    transform: translateY(-50%) scale(0.96);
-    box-shadow: none;
-    outline: none;
-    opacity: 0.94;
-  }
-
-  .ford-gallery-carousel__nav--prev {
-    left: max(8px, calc(50% - min(40vw, 176px) - 38px - 10px));
-  }
-
-  .ford-gallery-carousel__nav--next {
-    right: max(8px, calc(50% - min(40vw, 176px) - 38px - 10px));
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ford-gallery-carousel__slide,
-  .ford-gallery-carousel__nav {
-    transition: none;
-  }
-}
-
 .bento-mosaic {
   --bento-row: clamp(84px, 8vw, 124px);
   display: grid;
@@ -7407,9 +7168,8 @@ input[type="reset"] {
 /* Keep index hero ghost CTA visual style, but align interaction states to the new system. */
 .page-index .hero .hero__btn--ghost:hover,
 .page-index .hero .hero__btn--ghost:focus {
-  background: #e8f1ff;
   color: var(--blue-500);
-  border-color: var(--blue-500);
+  border-color: #004494;
 }
 
 .page-index .hero .hero__btn--ghost:active {
@@ -7536,4 +7296,82 @@ button [class^="icon-"],
   .hero__btn--quote-link {
     display: inline-flex;
   }
+}
+
+/* Follow-up actions under galleries and spec tables */
+.page-actions {
+  margin-top: 56px;
+  text-align: center;
+}
+
+.page-actions__title {
+  margin: 0 0 8px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  color: var(--color-neutral-900);
+}
+
+.page-actions__text {
+  max-width: 640px;
+  margin: 0 auto 24px;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-neutral-700);
+}
+
+.page-actions__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* From tablet up, lay the buttons out in equal columns sized to the longest
+   label, so a short and a long button come out the same width. */
+@media (min-width: 768px) {
+  .page-actions__buttons {
+    display: inline-grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    max-width: 100%;
+  }
+}
+
+/* Keep the standard button colours inside .page-content, which recolours links */
+.page-actions .hero__btn--primary {
+  color: #fff;
+}
+
+.page-actions .hero__btn--ghost {
+  color: var(--color-primary);
+}
+
+/* Spec table caption and abbreviation key */
+.specs-detail .table caption {
+  caption-side: top;
+  margin: 0;
+  padding: 0 0 12px;
+  text-align: left;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--color-neutral-700);
+}
+
+/* The table scrolls sideways on small screens; keep the caption text pinned
+   to the visible area instead of scrolling away with the columns. */
+.specs-detail .table caption .specs-caption__text {
+  display: inline-block;
+  position: sticky;
+  left: 0;
+  max-width: min(100%, calc(100vw - 40px));
+}
+
+.specs-key {
+  margin: 16px 0 0;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--color-neutral-700);
 }

@@ -41,8 +41,11 @@
 
     var nextSrc = item.getAttribute("data-image");
     var nextAlt = item.getAttribute("data-alt");
+    // Responsive candidates for the next image (same sizes as the visible image).
+    var nextSrcset = item.getAttribute("data-srcset") || "";
     if (nextSrc && nextSrc !== whoServeImage.getAttribute("src")) {
       if (prefersReducedMotion) {
+        whoServeImage.srcset = nextSrcset;
         whoServeImage.src = nextSrc;
         if (nextAlt) {
           whoServeImage.alt = nextAlt;
@@ -73,6 +76,7 @@
           if (nextAlt) {
             whoServeImage.alt = nextAlt;
           }
+          whoServeImage.srcset = nextSrcset;
           whoServeImage.src = nextSrc;
           void whoServeImage.offsetWidth;
           whoServeImage.classList.add("is-swipe-in");
@@ -88,6 +92,8 @@
 
         preloader.onload = runSwipeTransition;
         preloader.onerror = runSwipeTransition;
+        preloader.sizes = whoServeImage.sizes;
+        preloader.srcset = nextSrcset;
         preloader.src = nextSrc;
 
         if (preloader.complete && preloader.naturalWidth > 0) {

@@ -14,7 +14,6 @@ const files = [
   "contact.html",
   "gallery-chevy.html",
   "gallery-custom.html",
-  "gallery-ford-transit-alt.html",
   "gallery-ford-transit.html",
   "gallery-gmc.html",
   "gallery-mb-sprinter.html",

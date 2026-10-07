@@ -27,7 +27,6 @@
   var aliasMap = {
     "": "index.html",
     "index.php": "index.html",
-    "gallery-ford-transit-alt.html": "gallery-ford-transit.html",
     "rental-rates.html": "rental.html"
   };
   var hoverMedia = window.matchMedia("(hover: hover) and (pointer: fine)");
@@ -35,6 +34,8 @@
   var openDesktopMenu = null;
   var openMobileGroup = null;
   var hoverCloseTimer = null;
+  var hoverOpenedMenu = null;
+  var hoverOpenedAt = 0;
   var mobileHideTimer = null;
   var shouldReturnMobileFocus = false;
   var lastScrollY = Math.max(0, window.pageYOffset || window.scrollY || 0);
@@ -302,6 +303,9 @@
 
     window.clearTimeout(entry.panel._hideTimer);
     window.requestAnimationFrame(function () {
+      // Skip if the menu was closed again before this frame ran, so the panel
+      // can never be shown while aria-expanded says it is closed.
+      if (openDesktopMenu !== menuName) return;
       entry.panel.classList.add("is-open");
     });
   }
@@ -522,6 +526,14 @@
       event.preventDefault();
       event.stopPropagation();
 
+      // A tap or fast click fires mouseenter and click back to back. Treat that
+      // click as part of the hover-open instead of immediately closing the menu.
+      var openedByThisPointer =
+        hoverOpenedMenu === menuName && Date.now() - hoverOpenedAt < 350;
+      hoverOpenedMenu = null;
+
+      if (openDesktopMenu === menuName && openedByThisPointer) return;
+
       if (openDesktopMenu === menuName) {
         closeDesktopMenus({ returnFocus: true });
       } else {
@@ -531,6 +543,10 @@
 
     item.addEventListener("mouseenter", function () {
       if (isDesktopViewport() && prefersHoverOpen()) {
+        if (openDesktopMenu !== menuName) {
+          hoverOpenedMenu = menuName;
+          hoverOpenedAt = Date.now();
+        }
         openDesktopPanel(menuName);
       }
     });

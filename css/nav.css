@@ -545,8 +545,8 @@ body.site-nav-lock {
 .site-nav__menu-logo--chevrolet {
   width: 37px;
   height: 18px;
-  -webkit-mask-image: url("../img/pics/gallery-factory/logos/brand-logo-chevrolet.svg");
-  mask-image: url("../img/pics/gallery-factory/logos/brand-logo-chevrolet.svg");
+  -webkit-mask-image: url("../img/pics/gallery-factory/logos/brand-logo-chevrolet.png");
+  mask-image: url("../img/pics/gallery-factory/logos/brand-logo-chevrolet.png");
 }
 
 .site-nav__menu-logo--gmc {
@@ -1224,7 +1224,10 @@ body.site-nav-lock {
     align-self: center;
   }
 
-  .site-nav .site-nav__container {
+  /* The header bar and the open menu's top row share the same gutters so the
+     logo and the hamburger/close button stay in the same place. */
+  .site-nav .site-nav__container,
+  .site-nav__mobile-header.container {
     gap: 12px;
     padding-left: 16px;
     padding-right: 16px;
@@ -1330,7 +1333,10 @@ body.site-nav-lock {
     justify-content: space-between;
     min-height: var(--nav-height);
     height: var(--nav-height);
-    padding: 0 var(--bs-gutter-x, 0.75rem);
+    /* Width and side gutters come from the shared .container rules, exactly
+       like the header bar; only the vertical padding is set here. */
+    padding-top: 0;
+    padding-bottom: 0;
     border-bottom: 0;
   }
 
@@ -1349,7 +1355,6 @@ body.site-nav-lock {
 
   .site-nav__mobile-title-logo {
     max-width: 100%;
-    transform: translateY(4px);
   }
 
   .site-nav__mobile-close {
@@ -1358,6 +1363,9 @@ body.site-nav-lock {
     width: 44px;
     height: 44px;
     padding: 0;
+    /* Centre the 44px close target on the 34px hamburger it replaces, and drop
+       the default button bottom margin that pushed it off the row's centre. */
+    margin: 0 calc((34px - 44px) / 2) 0 0;
     border: none;
     background: transparent;
     box-shadow: none;
@@ -1375,12 +1383,14 @@ body.site-nav-lock {
   .site-nav__mobile-close::after {
     content: "";
     position: absolute;
-    right: 0;
-    top: calc(50% + 10px);
+    /* The hamburger icon sits flush right in its 34px button; inset the X by
+       the same amount the 44px close target overhangs it so the icons overlap. */
+    right: calc((44px - 34px) / 2);
+    top: 50%;
     width: 22px;
     height: 2.3px;
     border-radius: var(--radius-2);
-    background: #212529;
+    background: var(--nav-brand-icon);
     transform-origin: center;
   }
 
@@ -1612,7 +1622,8 @@ body.site-nav-lock {
 
 /* Match the page .container gutters so the nav lines up with page content */
 @media (min-width: 768px) and (max-width: 1199.98px) {
-  .site-nav .site-nav__container {
+  .site-nav .site-nav__container,
+  .site-nav__mobile-header.container {
     padding-left: 20px;
     padding-right: 20px;
   }
