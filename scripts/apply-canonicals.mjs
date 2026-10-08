@@ -6,6 +6,8 @@
  * - Inserts OR replaces canonical tags inside `<head>`.
  * - Ensures exactly one: `<link rel="canonical" href="...">`
  * - Places the canonical line directly below the `<title>` line.
+ * - Leaves a file alone when its `<head>` already has exactly one canonical tag
+ *   with the correct href, whatever its position or closing style (`>` or `/>`).
  * - Does NOT reformat/reserialize HTML: we only remove existing canonical tags
  *   and insert the single canonical line; everything else stays byte-for-byte
  *   identical.
@@ -64,12 +66,22 @@ function updateHtmlCanonicals(html, canonicalHref, relPosixForLogs) {
   const headCloseStart = headOpenEnd + headCloseOffset;
   const headInner = html.slice(headOpenEnd, headCloseStart);
 
+  // Already correct: one canonical tag pointing at the expected URL. Position
+  // and `>` vs `/>` are not worth a rewrite.
+  const existingTags = headInner.match(/<link\b[^>]*\brel\s*=\s*(["'])canonical\1[^>]*>/gi) || [];
+  if (existingTags.length === 1) {
+    const hrefMatch = /\bhref\s*=\s*(["'])(.*?)\1/i.exec(existingTags[0]);
+    if (hrefMatch && hrefMatch[2] === canonicalHref) {
+      return { changed: false, html, warning: null };
+    }
+  }
+
   // Remove existing canonical tags in <head>.
   //
   // 1) Remove entire lines that are only a canonical <link> (preserves original newline bytes).
   // 2) Remove any remaining canonical <link> tags that appear inline (rare, but keeps safety).
   const canonicalLineRe =
-    /^[\t ]*<link\b[^>]*\brel\s*=\s*(["'])canonical\1[^>]*>\s*(?:\r\n|\n)?/gim;
+    /^[\t ]*<link\b[^>]*\brel\s*=\s*(["'])canonical\1[^>]*>[\t ]*(?:\r\n|\n)?/gim;
   const canonicalTagRe = /<link\b[^>]*\brel\s*=\s*(["'])canonical\1[^>]*>/gim;
 
   let newHeadInner = headInner.replace(canonicalLineRe, "");

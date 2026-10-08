@@ -55,14 +55,96 @@
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
+        "@id": "https://coolfoxtrucks.com/rental.html#webpage",
         "name": "Refrigerated Van & Trailer Rentals | Cool Fox Trucks",
         "url": "https://coolfoxtrucks.com/rental.html",
+        "description": "Rent refrigerated vans and trailers from Cool Fox Trucks with daily and weekly options, delivery support, and dependable temperature-controlled performance.",
         "inLanguage": "en-US",
         "isPartOf": {
           "@type": "WebSite",
+          "@id": "https://coolfoxtrucks.com/#website",
           "name": "Cool Fox Trucks",
           "url": "https://coolfoxtrucks.com/"
+        },
+        "about": {
+          "@id": "https://coolfoxtrucks.com/#cool-fox-trucks"
+        },
+        "breadcrumb": {
+          "@id": "https://coolfoxtrucks.com/rental.html#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://coolfoxtrucks.com/rental.html#service"
         }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://coolfoxtrucks.com/rental.html#service",
+        "name": "Refrigerated Van & Trailer Rental",
+        "serviceType": "Refrigerated van and trailer rental",
+        "url": "https://coolfoxtrucks.com/rental.html",
+        "description": "Late model refrigerated vans and custom built refrigerated trailers for rent on a daily, weekly, and monthly basis.",
+        "image": "https://coolfoxtrucks.com/img/rental/cf-rental-van.jpg",
+        "provider": {
+          "@type": "LocalBusiness",
+          "@id": "https://coolfoxtrucks.com/#cool-fox-trucks",
+          "name": "Cool Fox Trucks",
+          "url": "https://coolfoxtrucks.com/",
+          "telephone": "+1-631-608-2112",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "33 Reith St",
+            "addressLocality": "Copiague",
+            "addressRegion": "NY",
+            "postalCode": "11726",
+            "addressCountry": "US"
+          }
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Refrigerated rentals",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Refrigerated van rental",
+                "description": "Rental vans built on Mercedes-Benz Sprinter and Ford Transit vehicles with commercial-grade refrigeration systems. Standby power lets the refrigeration unit run from a standard 110v outlet when parked."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Refrigerated trailer rental",
+                "description": "Insulated and refrigerated trailers that hold 35° temperatures, powered by a standard 110v plug. Delivery and pickup offered."
+              }
+            }
+          ]
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://coolfoxtrucks.com/rental.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://coolfoxtrucks.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Rentals",
+            "item": "https://coolfoxtrucks.com/rental.html"
+          }
+        ]
       }
     </script>
 
@@ -1030,7 +1112,7 @@
                   </li>
                   <li>
                     <i class="fa-solid fa-check"></i
-                    ><span>Weekly – (5 day) $750 plus</span>
+                    ><span>Weekly – $750 for 5 days</span>
                   </li>
                   <li>
                     <i class="fa-solid fa-check"></i
